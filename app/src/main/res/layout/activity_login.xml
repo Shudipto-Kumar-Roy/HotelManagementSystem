@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:weightSum="10"
+    android:background="@drawable/login_background_color"
+    tools:context=".LoginActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:gravity="center"
+        android:background="#343343"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/LoginTitleID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:text="Hotel Login Page"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textColor="#FF9100"
+
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/login_icon"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:orientation="vertical"
+        android:gravity="center">
+
+     <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:gravity="center"
+         android:orientation="vertical"
+         android:padding="5dp">
+
+         <TextView
+             android:id="@+id/UserTextId"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="User Name"
+             android:textSize="20sp"
+             android:textColor="#ffffff"
+             android:textStyle="bold"/>
+
+         <EditText
+             android:id="@+id/UserNameId"
+             android:layout_width="match_parent"
+             android:layout_height="50dp"
+             android:textColor="#ffffff"
+             android:layout_marginLeft="5dp"
+             android:textAlignment="center" />
+
+     </LinearLayout><LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical"
+         android:padding="5dp">
+
+         <TextView
+             android:id="@+id/PasswordTextId"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="Password"
+             android:textSize="20sp"
+             android:textColor="#ffffff"
+             android:textStyle="bold"/>
+
+        <EditText
+            android:id="@+id/UserPasswordId"
+            android:layout_width="match_parent"
+            android:inputType="textWebPassword"
+            android:layout_height="50dp"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="5dp"
+            android:textAlignment="center" />
+
+     </LinearLayout>
+
+        <Button
+            android:id="@+id/LoginButtonId"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="Login"
+            android:textColor="#ffff"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/login_button_background"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No Account. Please SignIn First"
+            android:textAlignment="center"
+            android:textSize="14sp"
+            android:textColor="#ffffff"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
+        <Button
+            android:id="@+id/SignInButtonId"
+            android:layout_gravity="center"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:text="SignIn"
+            android:textColor="#ffff"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:background="@drawable/login_button_background"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>
