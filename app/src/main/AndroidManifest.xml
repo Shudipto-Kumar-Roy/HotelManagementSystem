@@ -9,8 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddNewGuest" />
-        <activity android:name=".HomePageActivity" />
+        <activity android:name=".AddNewGuest"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".HomePageActivity"
+         android:screenOrientation="portrait" />
         <activity
             android:name=".SignupActivity"
             android:screenOrientation="portrait" />
