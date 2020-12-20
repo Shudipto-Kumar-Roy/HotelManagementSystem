@@ -60,7 +60,7 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
         }
         else if(v.getId()==R.id.updateGuestId)
         {
-            intent = new Intent(HomePageActivity.this,UpdateGuest.class);
+            intent = new Intent(HomePageActivity.this, com.example.demoprojecthotelmanagement.UpdateGuest.class);
             startActivity(intent);
         }
         else if(v.getId()==R.id.deleteGuestId)
