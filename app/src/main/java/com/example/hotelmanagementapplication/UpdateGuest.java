@@ -1,4 +1,4 @@
-package com.example.hotelmanagementapplication;
+package com.example.demoprojecthotelmanagement;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,6 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.hotelmanagementapplication.DatabaseSQLite;
+import com.example.hotelmanagementapplication.R;
 
 public class UpdateGuest extends AppCompatActivity implements View.OnClickListener {
 
@@ -68,6 +71,70 @@ public class UpdateGuest extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
+        if(v.getId()==R.id.searchButtonId)
+        {
+            Cursor searchValue = databaseSQLite.searchData();
+            if(searchValue.getCount()==0)
+            {
+
+                Toast.makeText(getApplicationContext(),"No Guest booked in this room no",Toast.LENGTH_SHORT).show();
+
+
+            }
+            else {
+                String roomId1 = roomId.getText().toString();
+                while(searchValue.moveToNext())
+                {
+                    if(searchValue.getString(0).equals(roomId1))
+                    {
+                        name.setText(searchValue.getString(1));
+                        father_name.setText(searchValue.getString(2));
+                        mother_name.setText(searchValue.getString(3));
+                        email.setText(searchValue.getString(4));
+                        address.setText(searchValue.getString(5));
+                        phone.setText(searchValue.getString(6));
+                    }
+                    else
+                    {
+
+                        Toast.makeText(getApplicationContext(),"No matche found",Toast.LENGTH_SHORT).show();
+
+                    }
+
+                }
+            }
+
+        }
+
+        else if(v.getId()==R.id.updateButtonId)
+        {
+
+            String room_id1 = roomId.getText().toString();
+            String name1 = name.getText().toString();
+            String father_name1 = father_name.getText().toString();
+            String mother_name1 = mother_name.getText().toString();
+            String email1 = email.getText().toString();
+            String address1 = address.getText().toString();
+            String phone1 = phone.getText().toString();
+
+            if(room_id1.equals("") || name1.equals("") || father_name1.equals("") || mother_name1.equals("") || email1.equals("") || address1.equals("") || phone1.equals(""))
+            {
+                Toast.makeText(getApplicationContext(),"Please fill up and try again..",Toast.LENGTH_SHORT).show();
+
+            }
+
+            boolean isUpdated = databaseSQLite.update1(room_id1,name1,father_name1,mother_name1,email1,address1,phone1);
+            if(isUpdated==true)
+            {
+                Toast.makeText(getApplicationContext(), "Guest info. updated successfully!!", Toast.LENGTH_LONG).show();
+
+            }
+            else
+            {
+                Toast.makeText(getApplicationContext(), "Failed!!", Toast.LENGTH_LONG).show();
+
+            }
+        }
 
     }
 }
