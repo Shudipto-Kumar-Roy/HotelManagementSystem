@@ -58,6 +58,36 @@ public class HomePageActivity extends AppCompatActivity implements View.OnClickL
             startActivity(intent);
 
         }
+        else if(v.getId()==R.id.updateGuestId)
+        {
+            intent = new Intent(HomePageActivity.this,UpdateGuest.class);
+            startActivity(intent);
+        }
+        else if(v.getId()==R.id.deleteGuestId)
+        {
+            intent = new Intent(HomePageActivity.this,DeleteGuest.class);
+            startActivity(intent);
+        }
+        else if(v.getId()==R.id.livingGuestId)
+        {
+            intent = new Intent(HomePageActivity.this,AllLivingGuest.class);
+            startActivity(intent);
+        }
+        else if(v.getId()==R.id.paymentGuestId)
+        {
+            intent = new Intent(HomePageActivity.this,GuestPayment.class);
+            startActivity(intent);
+        }
+        else if(v.getId()==R.id.paymentListGuestId)
+        {
+            intent = new Intent(HomePageActivity.this,GuestPaymentList.class);
+            startActivity(intent);
+        }
+        else if(v.getId()==R.id.updatePaymentId)
+        {
+            intent = new Intent(HomePageActivity.this,UpdatePayment.class);
+            startActivity(intent);
+        }
 
 
     }
